@@ -1,0 +1,36 @@
+# Visualizing World Cup Data With Seaborn
+# Steps 1, 2
+import codecademylib3_seaborn
+from matplotlib import pyplot as plt
+import pandas as pd
+import seaborn as sns
+# Step 3
+df = pd.read_csv("WorldCupMatches.csv")
+# Step 4
+print(df.head())
+# Step 5
+df['Total Goals'] = df['Home Team Goals'] + df['Away Team Goals']
+# Step 6
+sns.set_style("whitegrid")
+# Step 7
+sns.set_context("poster", font_scale=0.8)
+# Step 8
+f, ax = plt.subplots(figsize=(12,7))
+# Step 9
+ax = sns.barplot(data=df, x="Year", y="Total Goals")
+# Steps 10, 11
+ax.set_title("Average Number Of Goals Scored In World Cup Matches By Year")
+plt.show()
+# Step 12
+df_goals = pd.read_csv("goals.csv")
+print(df_goals.head())
+# Step 13
+sns.set_context("notebook", font_scale=1.25)
+# Step 14
+f, ax2 = plt.subplots(figsize=(12,7))
+# Step 15
+sns.boxplot(data=df_goals, x="year", y="goals", palette="Spectral")
+# Step 16
+ax2.set_title("Number Of Goals Scored In World Cup Matches By Year")
+# Step 17
+plt.show()
