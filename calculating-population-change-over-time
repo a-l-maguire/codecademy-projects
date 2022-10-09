@@ -1,0 +1,28 @@
+# Calculating Population Change Over Time
+# Steps 1, 2
+city_name = "Istanbul, Turkey"
+# Step 3
+pop_1927 = 691000
+# Step 4
+pop_2017 = 15029231
+# Step 5
+pop_change = pop_2017 - pop_1927
+# Step 6
+percentage_gr = ((pop_2017 - pop_1927)/pop_1927) * 100
+# Step 7
+annual_gr = percentage_gr/90
+# Steps 8, 9, 10, 11, 12
+def population_growth(year_one, year_two, population_one, population_two):
+  growth_rate = (((population_two - population_one)/population_one) * 100)/(year_two - year_one)
+  return growth_rate
+# Step 13
+print(annual_gr)
+# Step 14
+set_one = population_growth(1927,2017,pop_1927,pop_2017)
+print(set_one)
+# Step 15
+set_two = population_growth(1950,2000,983000,8831800)
+print(set_two)
+# Step 16
+report = "The change in population from 1927 to 2017 in " + str(city_name) + ", was " + str(pop_change) + ", the annual growth rate of the population was " + str(set_one) + ". The rate of population change between 1950 and 2000 was " + str(set_two) + "."
+print(report)
